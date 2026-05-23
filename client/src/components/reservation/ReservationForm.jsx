@@ -9,17 +9,19 @@ import Button from '../ui/Button.jsx';
 export default function ReservationForm({ surface = 'light', onSuccess }) {
   const { errors, status, submit, updateField, values, whatsAppText } = useReservationForm({ onSuccess });
   const isDark = surface === 'dark';
-  const fieldClass = `focus-ring h-12 rounded-2xl border px-4 font-medium ${
-    isDark ? 'border-white/10 bg-white/[0.06] text-porcelain' : 'border-ink/10 bg-white text-ink'
-  }`;
+  const fieldClass = `focus-ring h-12 rounded-2xl border px-4 font-medium ${isDark ? 'border-white/10 bg-white/[0.06] text-porcelain' : 'border-ink/70 bg-red text-ink'
+    }`;
   const labelClass = `grid gap-2 text-sm font-bold ${isDark ? 'text-porcelain/72' : 'text-ink/72'}`;
   const errorClass = isDark ? 'text-champagne' : 'text-wine';
 
   return (
     <form onSubmit={submit} className="grid gap-4 md:grid-cols-2" noValidate>
       <FormField label="Full name" name="name" value={values.name} onChange={updateField} error={errors.name} className={fieldClass} labelClass={labelClass} errorClass={errorClass} autoComplete="name" />
+
       <FormField label="Email address" name="email" type="email" value={values.email} onChange={updateField} error={errors.email} className={fieldClass} labelClass={labelClass} errorClass={errorClass} autoComplete="email" />
+
       <FormField label="Phone number" name="phone" type="tel" value={values.phone} onChange={updateField} error={errors.phone} className={fieldClass} labelClass={labelClass} errorClass={errorClass} autoComplete="tel" />
+
       <FormField label="Date" name="date" type="date" min={getTodayValue()} value={values.date} onChange={updateField} error={errors.date} className={fieldClass} labelClass={labelClass} errorClass={errorClass} />
 
       <label className={labelClass}>
@@ -45,13 +47,12 @@ export default function ReservationForm({ surface = 'light', onSuccess }) {
           {bookingTypes.map((type) => (
             <label
               key={type.value}
-              className={`cursor-pointer rounded-2xl border p-4 transition ${
-                values.bookingType === type.value
+              className={`cursor-pointer rounded-2xl border p-4 transition ${values.bookingType === type.value
                   ? 'border-champagne bg-champagne/15'
                   : isDark
                     ? 'border-white/10 bg-white/[0.04] hover:border-champagne/35'
                     : 'border-ink/10 bg-porcelain hover:border-champagne/55'
-              }`}
+                }`}
             >
               <input className="sr-only" type="radio" name="bookingType" value={type.value} checked={values.bookingType === type.value} onChange={updateField} />
               <span className={`block font-display text-2xl font-semibold ${isDark ? 'text-porcelain' : 'text-ink'}`}>{type.label}</span>

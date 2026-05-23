@@ -36,7 +36,7 @@ export default function Modal({ open, title, children, onClose }) {
         >
           <motion.section
             {...modalPanelMotion}
-            className="max-h-[92vh] w-full max-w-3xl overflow-y-auto rounded-[28px] bg-porcelain p-5 shadow-glow md:p-8"
+            className="max-h-[92vh] w-full max-w-3xl overflow-y-auto rounded-[28px] border border-champagne/[0.24] bg-[linear-gradient(145deg,rgba(118,52,63,0.94),rgba(18,17,15,0.97)_62%)] p-5 text-porcelain shadow-glow md:p-8"
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
@@ -44,13 +44,13 @@ export default function Modal({ open, title, children, onClose }) {
           >
             <div className="mb-6 flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.26em] text-copper">Quick booking</p>
-                <h2 id={titleId} className="mt-2 font-display text-4xl font-semibold text-ink">{title}</h2>
+                <p className="text-xs font-bold uppercase tracking-[0.26em] text-champagne">Quick booking</p>
+                <h2 id={titleId} className="mt-2 font-display text-4xl font-semibold text-porcelain">{title}</h2>
               </div>
               <button
                 ref={closeRef}
                 type="button"
-                className="focus-ring grid h-11 w-11 shrink-0 place-items-center rounded-full bg-ink text-porcelain transition hover:bg-charcoal"
+                className="focus-ring grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.08] text-porcelain transition hover:bg-white/[0.14]"
                 aria-label="Close reservation modal"
                 onClick={onClose}
               >
