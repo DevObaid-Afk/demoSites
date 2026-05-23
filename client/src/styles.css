@@ -24,6 +24,33 @@ img {
   max-width: 100%;
 }
 
+select {
+  color-scheme: dark;
+}
+
+select option {
+  background: #f8f5ef;
+  color: #12110f;
+}
+
+select option:checked,
+select option:hover {
+  background: #d8b46a;
+  color: #12110f;
+}
+
+.reservation-form-dark input:-webkit-autofill,
+.reservation-form-dark input:-webkit-autofill:hover,
+.reservation-form-dark input:-webkit-autofill:focus,
+.reservation-form-dark textarea:-webkit-autofill,
+.reservation-form-dark textarea:-webkit-autofill:hover,
+.reservation-form-dark textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f8f5ef;
+  caret-color: #f8f5ef;
+  box-shadow: 0 0 0 1000px rgba(248, 245, 239, 0.06) inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }

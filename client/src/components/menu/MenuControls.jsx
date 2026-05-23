@@ -17,7 +17,7 @@ export default function MenuControls({ categories, activeCategory, searchTerm, o
           <input
             value={searchTerm}
             onChange={(event) => onSearchChange(event.target.value)}
-            className="focus-ring h-14 min-h-14 w-full rounded-full border border-white/10 bg-ink/58 py-4 pl-11 pr-12 text-porcelain placeholder:text-black/100 bg-transparent-500 text-black"
+            className="focus-ring h-14 min-h-14 w-full rounded-full border border-white/10 bg-ink/58 py-4 pl-11 pr-12 text-porcelain placeholder:text-porcelain/52"
             placeholder="Search dishes, ingredients, popular..."
             type="search"
           />

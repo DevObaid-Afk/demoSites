@@ -9,13 +9,13 @@ import Button from '../ui/Button.jsx';
 export default function ReservationForm({ surface = 'light', onSuccess }) {
   const { errors, status, submit, updateField, values, whatsAppText } = useReservationForm({ onSuccess });
   const isDark = surface === 'dark';
-  const fieldClass = `focus-ring h-12 rounded-2xl border px-4 font-medium ${isDark ? 'border-white/10 bg-white/[0.06] text-porcelain' : 'border-ink/70 bg-red text-ink'
+  const fieldClass = `focus-ring h-12 rounded-2xl border px-4 font-medium ${isDark ? 'border-white/10 bg-white/[0.06] text-porcelain' : 'border-ink/10 bg-porcelain text-ink'
     }`;
   const labelClass = `grid gap-2 text-sm font-bold ${isDark ? 'text-porcelain/72' : 'text-ink/72'}`;
   const errorClass = isDark ? 'text-champagne' : 'text-wine';
 
   return (
-    <form onSubmit={submit} className="grid gap-4 md:grid-cols-2" noValidate>
+    <form onSubmit={submit} className={`grid gap-4 md:grid-cols-2 ${isDark ? 'reservation-form-dark' : ''}`} noValidate>
       <FormField label="Full name" name="name" value={values.name} onChange={updateField} error={errors.name} className={fieldClass} labelClass={labelClass} errorClass={errorClass} autoComplete="name" />
 
       <FormField label="Email address" name="email" type="email" value={values.email} onChange={updateField} error={errors.email} className={fieldClass} labelClass={labelClass} errorClass={errorClass} autoComplete="email" />
