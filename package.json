@@ -1,0 +1,14 @@
+{
+  "name": "lumiere-stay-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Production-grade restaurant and boutique hotel demo website.",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix client",
+    "start": "npm run start --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
